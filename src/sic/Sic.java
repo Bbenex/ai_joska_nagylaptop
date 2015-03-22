@@ -1,6 +1,6 @@
 package sic;
 
-public class SystemSoul {
+public class Sic {
 
     
     public static void main(String[] args) {
