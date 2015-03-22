@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.net.URL;
 import javax.swing.*;
-import systemsoul.FaceGUI;
+import sic.FaceGUI;
 
 public class TrayIconDemo {
     public static void main(String[] args) {

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package systemsoul;
+package sic;
 
 import static java.lang.Thread.sleep;
 import java.util.Calendar;

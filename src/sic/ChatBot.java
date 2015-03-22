@@ -1,5 +1,5 @@
 
-package systemsoul;
+package sic;
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;

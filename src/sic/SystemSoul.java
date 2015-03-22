@@ -1,4 +1,4 @@
-package systemsoul;
+package sic;
 
 public class SystemSoul {
 
