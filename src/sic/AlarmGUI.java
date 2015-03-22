@@ -27,9 +27,7 @@ public class AlarmGUI extends javax.swing.JFrame {
     
     ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     DateFormat df = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
-    /**
-     * Creates new form GuitIME
-     */
+    
     public AlarmGUI() {
         initComponents();
         Calendar now = Calendar.getInstance();   // Gets the current date and time
