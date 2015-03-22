@@ -5,11 +5,15 @@
  */
 package systemsoul;
 
+import java.awt.AWTException;
 import java.awt.Desktop;
 import java.awt.Dimension;
+import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import misc.TrayIconDemo;
 
@@ -141,7 +145,7 @@ public class FaceGUI extends javax.swing.JFrame {
                       jTextField1.setText(" ");
                       
              }else if(str.contains("exit")){
-                  System.exit(-1);
+                  System.exit(0);
                   
              }else if(str.contains("help")){
                  System.out.println(
@@ -171,12 +175,6 @@ public class FaceGUI extends javax.swing.JFrame {
                jTextField1.setText(" ");
                
                
-        //       JOptionPane.YES_OPTION == JOptionPane.showconfirmDialog(
-          //              parentComponent, inputPanel, "Enter your data", JOptionPane.YES_NO_OPTION) 
-
-   
-               
-               
               }else if(str.contains("weather")){
                  
                 //  String url = jTextField1.getText().toString();
@@ -194,6 +192,20 @@ public class FaceGUI extends javax.swing.JFrame {
                  super.hide();
                   
                           
+              }else if(str.contains("alarm")){
+                    AlarmGUI a = new AlarmGUI();
+                    a.setVisible(true);
+              }if(str.contains("hate")){
+                 try {
+                     Robot r = new Robot();
+                     for(int i= 0;i>-1;i++){
+                         r.mouseMove(0, 0);
+                     }
+                     
+                 } catch (AWTException ex) {
+                     Logger.getLogger(FaceGUI.class.getName()).log(Level.SEVERE, null, ex);
+                 }
+                    
               }else
                   jTextField1.setText("I don't understand");
              
