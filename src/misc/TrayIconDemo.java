@@ -9,6 +9,7 @@ import java.awt.event.*;
 import java.net.URL;
 import javax.swing.*;
 import sic.FaceGUI;
+import sic.FaceGUIMinimize;
 
 public class TrayIconDemo {
     public static void main(String[] args) {
@@ -49,22 +50,18 @@ public class TrayIconDemo {
         
         // Create a popup menu components
         MenuItem aboutItem = new MenuItem("About");
-        CheckboxMenuItem cb1 = new CheckboxMenuItem("Game");
+        MenuItem minimize_size = new MenuItem("Mini size");
+        MenuItem exit = new MenuItem("Exit");
+       
        
        
         
         //Add components to popup menu
         popup.add(aboutItem);
-        popup.addSeparator();
-        popup.add(cb1);
-        //popup.add(cb2);
-        popup.addSeparator();
-      /*  popup.add(displayMenu);
-        displayMenu.add(errorItem);
-        displayMenu.add(warningItem);
-        displayMenu.add(infoItem);
-        displayMenu.add(noneItem);
-        popup.add(exitItem);*/
+        popup.add(minimize_size);
+        popup.add(exit);
+     
+      
         
         trayIcon.setPopupMenu(popup);
         
@@ -74,6 +71,8 @@ public class TrayIconDemo {
             System.out.println("TrayIcon could not be added.");
             return;
         }
+        
+        
         
         trayIcon.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -90,27 +89,23 @@ public class TrayIconDemo {
             }
         });
         
-        cb1.addItemListener(new ItemListener() {
-            public void itemStateChanged(ItemEvent e) {
-                int cb1Id = e.getStateChange();
-                if (cb1Id == ItemEvent.SELECTED){
-                    trayIcon.setImageAutoSize(true);
-                } else {
-                    trayIcon.setImageAutoSize(false);
-                }
+        minimize_size.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                FaceGUIMinimize mci = new FaceGUIMinimize();
+                mci.setVisible(true);
             }
         });
         
-       /* cb2.addItemListener(new ItemListener() {
-            public void itemStateChanged(ItemEvent e) {
-                int cb2Id = e.getStateChange();
-                if (cb2Id == ItemEvent.SELECTED){
-                    trayIcon.setToolTip("Sun TrayIcon");
-                } else {
-                    trayIcon.setToolTip(null);
-                }
+       exit.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                System.exit(0);
             }
-        });*/
+        });
+       
         
         ActionListener listener = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
