@@ -216,6 +216,7 @@ public class FaceGUI extends javax.swing.JFrame {
               }else 
                   
                   jTextField1.setText("I don't understand");
+              
              
                  }     
         
