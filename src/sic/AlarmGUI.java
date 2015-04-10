@@ -215,10 +215,13 @@ public class AlarmGUI extends javax.swing.JFrame {
         setVisible(false);
         
         scheduler.schedule(new Job(), ms, TimeUnit.MILLISECONDS); 
+        
+        super.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-            exit(0);        // TODO add your handling code here:
+            super.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

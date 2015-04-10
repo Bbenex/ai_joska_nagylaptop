@@ -8,8 +8,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.net.URL;
 import javax.swing.*;
-import sic.FaceGUI;
-import sic.FaceGUIMinimize;
+import sic.*;
+
 
 public class TrayIconDemo {
     public static void main(String[] args) {
@@ -51,14 +51,21 @@ public class TrayIconDemo {
         // Create a popup menu components
         MenuItem aboutItem = new MenuItem("About");
         MenuItem minimize_size = new MenuItem("Mini size");
-        MenuItem exit = new MenuItem("Exit");
-       
+        MenuItem note = new MenuItem("Jegyzet");
+       MenuItem alarm = new MenuItem("Jelzés");
+       MenuItem time = new MenuItem("Idő");
+       MenuItem game = new MenuItem("Játék");
+       MenuItem exit = new MenuItem("Kilépés");
        
        
         
         //Add components to popup menu
         popup.add(aboutItem);
         popup.add(minimize_size);
+        popup.add(note);
+        popup.add(alarm);
+        popup.add(time);
+        popup.add(game);
         popup.add(exit);
      
       
@@ -106,6 +113,40 @@ public class TrayIconDemo {
             }
         });
        
+       note.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                NotesGUI nt = new NotesGUI();
+                nt.setVisible(true);
+            }
+        });
+        alarm.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                AlarmGUI ag = new AlarmGUI();
+                ag.setVisible(true);
+            }
+        });
+        
+        time.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                timeGUI time = new timeGUI();
+                time.setVisible(true);
+            }
+        });
+        
+        game.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                GameChooseGUI gm = new GameChooseGUI();
+                gm.setVisible(true);
+            }
+        });
         
         ActionListener listener = new ActionListener() {
             public void actionPerformed(ActionEvent e) {

@@ -30,7 +30,7 @@ n1,n2,n3,n4,n5,n6,n7,n8,n9,n0,plus,minus,mul,div,dot,equal;
       JOptionPane p=new JOptionPane();
       double preRes=0,secVal=0,res;
 
-      private static void assign(String no)
+      private static void assign(String no) // kijeloles
         {
          if((result.getText()).equals("0"))
             result.setText(no);
@@ -43,7 +43,7 @@ n1,n2,n3,n4,n5,n6,n7,n8,n9,n0,plus,minus,mul,div,dot,equal;
             result.setText(result.getText()+no);
          }
 
-      public CalculatorPanel() {
+      public CalculatorPanel() { // panel
          setLayout(new BorderLayout());
          result.setEditable(false);
          result.setSize(300,200);

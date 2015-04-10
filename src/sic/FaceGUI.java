@@ -211,7 +211,9 @@ public class FaceGUI extends javax.swing.JFrame {
                      Logger.getLogger(FaceGUI.class.getName()).log(Level.SEVERE, null, ex);
                  }
                     jTextField1.setText(" ");
-              }else
+              }else if(str == " "){
+                  JOptionPane.showMessageDialog(this, "Üres mező , adja meg a parancsot!");
+              }else 
                   jTextField1.setText("I don't understand");
              
                  }     
